@@ -22,7 +22,7 @@ int main(void)
 
             //Connection creation
             driver = get_driver_instance();
-            con = driver->connect("tcp:127.0.0.1:3306", "root", "AqUaReGiA@007");
+            con = driver->connect("tcp:127.0.0.1:3306", "root", "*Insert password MySQL password here*");
             //connecting to MySQL test database
             con->setSchema("test");
 
@@ -33,7 +33,6 @@ int main(void)
                     cout<<"\t...MySQL replies: ";
                     cout<<res->getString("_message")<<endl;
                     cout<<"\t... MySQL says it again: ";
-                    cout<<res->getString(1)<<endl;
                 }
             delete res;
             delete stmt;
