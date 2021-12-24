@@ -1,8 +1,5 @@
 #include <stdio.h>
 
-#define not !
-#define and &&
-#define or ||
 #define start {
 #define then {
 #define end }
