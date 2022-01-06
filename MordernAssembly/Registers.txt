@@ -1,0 +1,33 @@
+Types of 16 bit registers
+
+General purpose registers - Although general purpose register has a special function but they can also be used by us for storing and using information
+
+AX - AX is the primary accumulator 
+BX - base register can be used for indexed addressing
+CX - count register can be used to store the loop count in iterative instructions
+DX - data register
+
+AL can be used to access lower byte and AH can be used to access Higher byte of the AX register this also remains true for other 3 registers
+
+
+Pointer register - 
+
+IP - Instruction Pointer 
+SP - Stack Pointer
+BP - Base Pointer
+
+
+Index registers - 
+
+SI - Source Index
+DI - Destination Index
+
+
+Control registers are just flags
+
+There are segment registers also present but we no longer use segmented memory so they are pointless
+
+
+Important point - all of the programs in this file were made in Visual Studio and had bunch of other files with them as well. I just pasted the main cpp and main asm file from the projects.
+
+Thank you very much
