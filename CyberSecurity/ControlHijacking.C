@@ -4,7 +4,7 @@
 
 int main(int arg, char **argv){
 
-    volatile int modified;
+    int modified;
     char buffer[64];
 
     modified = 0;
