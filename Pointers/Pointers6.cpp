@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
     int rows, cols;
-    cout<<"Enter number of rows and coluumns: ";
+    cout<<"Enter number of rows and columns: ";
     cin>>rows>>cols;
 
     int** table=new int*[rows];
