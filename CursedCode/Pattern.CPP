@@ -7,10 +7,9 @@ int main()
     int n;
     cin>>n;
     
-    if(n == 1)
-        {
-            cout<<"*";
-        }
+    if(n == 1){
+        cout<<"*";
+    }
     else if(n==3){
         cout<<"\t*\t\n";
         cout<<"*\t*\t*\t\n";
