@@ -15,7 +15,32 @@ class Solution{
     	int platforms = 1;
         for(int i = 1;i<n;i++)
         {
-            
+            // Your code here
+    	int platforms = 1;
+    	int res = 1;
+    	int x = 1;
+    	int j = 0;
+    	
+    	sort(arr, arr+n);
+    	sort(dep, dep+n);
+    	
+    	while(x<n && j<n)
+    	{
+    	    if(arr[x]<=dep[j]) {
+    	        platforms++;
+    	        x++;
+    	    }
+    	    
+    	    else 
+    	    {
+    	        platforms--;
+    	        j++;
+    	    }
+    	    
+    	    res = max(platforms, res);
+    	}
+    	
+    	return res;
         }
     }
 };
