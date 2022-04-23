@@ -14,6 +14,16 @@ Node* createNode(int data){
     return newNode;
 }
 
+void printTreePreOrder(Node* root)
+{
+    if(root == nullptr)
+        return;
+    
+    cout<<root->data<<endl;
+    printTreePreOrder(root->left);
+    printTreePreOrder(root->right);
+}
+
 int main()
 {
     //Level 1
@@ -38,8 +48,11 @@ int main()
     root2->left->right->left = createNode(9);
     root2->right->right->left = createNode(15);
     
-
-    cin.get();
+    printTreePreOrder(root1);
+    cout<<endl;
+    printTreePreOrder(root2);
+    
+    return 0;
 }
 
 /*

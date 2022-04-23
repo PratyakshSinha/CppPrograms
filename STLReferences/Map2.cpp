@@ -15,12 +15,15 @@ int main()
     pokedex.insert(pair<string, list<string>>("Pikachu", pikachuAttacks));
     pokedex.insert(pair<string, list<string>>("Charmender", charmenderAttacks));
     pokedex.insert(pair<string, list<string>>("Chikorita", chikoritaAttacks));
+    pokedex.insert({"Hello", pikachuAttacks});
 
     for(auto pair : pokedex)
     {
         cout<< pair.first<<" - ";
         for(auto attack : pair.second)
+        {
             cout<< attack <<", ";
+        }
         cout<<endl;
     }
 }
