@@ -5,23 +5,34 @@ class Solution {
 public:
     int numIdenticalPairs(vector<int>& nums) {
         
-        unordered_map<int,int> sol;
-        int solution = 0;
+        unordered_map<int, int> result;
+        int counter = 0;
         for(int i = 0;i<nums.size();i++)
         {
-            for(int j = 0;j<nums.size();j++)
+            if(result.find(nums[i])==result.end())
             {
-                if(i!=j)
-                    sol.insert(pair<int,int>(nums[i],nums[j]));
+                result[nums[i]] = 1;
+            }
+            else
+            {
+                counter+=result[nums[i]];
+                result[nums[i]]++;
             }
         }
 
-        for(auto pair: sol)
-        {
-            if(pair.first == pair.second)
-                solution++;
-        }
-
-        return solution;
+        return counter;
     }
+
+    /*
+    int numIdenticalPairs(vector<int>& nums) {
+        int total = 0;
+        map<int,int> mp;
+        for(int i = 0;i<nums.size();i++)
+        {
+            total+=mp[nums[i]];
+            mp[nums[i]]++;
+        }
+        return total;
+    }
+    */
 };
