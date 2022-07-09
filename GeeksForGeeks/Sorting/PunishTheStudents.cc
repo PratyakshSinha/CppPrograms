@@ -25,8 +25,8 @@ class Solution{
         int average, sum = 0;
         for(int i = 0;i<n;i++)
             sum+=marks[i];
-        average = sum/n;
-        if((average-counter)<avg)
+        average = (sum - counter)/n;
+        if(average<avg)
             return 0;
         return 1;
     }
