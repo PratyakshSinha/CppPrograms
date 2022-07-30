@@ -1,36 +1,32 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 //Initial template for C++
 
 #include <bits/stdc++.h>
 using namespace std;
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 //User function template for C++
 
 class Solution{
 public:
     //Function to reverse every sub-array group of size k.
     void reverseInGroups(vector<long long>& arr, int n, int k){
-        vector<long long> rev;
-        int flag = 0;
-        for(int i = 0;i<=n;i = i+k)
-        {
-            for(int j = i+k;j<flag;j--)
-            {
-                rev.push_back(arr[j]);
-            }
-            flag = i+k;
+        int s = 0;
+        int e = s+(k-1);
+        while(s<n and e<n){
+            reverse(arr.begin()+s, arr.begin()+e+1
+            .);
+            s=e+1;
+            e = s+(k);
         }
-
-        for(int i=0;i<n;i++)
-        {
-            arr[i] = rev[i];
+        if(s<n){
+            reverse(arr.begin()+s, arr.begin()+n);
         }
     }
 };
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 int main() {
     int t; 
     cin >> t; 
@@ -57,4 +53,5 @@ int main() {
     }
 }
 
-  // } Driver Code Ends
+
+// } Driver Code Ends
