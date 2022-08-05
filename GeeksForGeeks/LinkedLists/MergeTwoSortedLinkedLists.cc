@@ -87,7 +87,7 @@ Node* sortedMerge(Node* head1, Node* head2)
     if(head1->data < head2->data)
     {
         returnList = new Node(head1->data);
-        tail = returnList;
+            tail = returnList;
         head1 = head1->next;
     }
     else
