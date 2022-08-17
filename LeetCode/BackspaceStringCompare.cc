@@ -3,31 +3,27 @@ using namespace std;
 
 class Solution {
 public:
-    bool backspaceCompare(string s, string t) {
-        stack<char> x,y;
-        int i = 0, j = 0;
-            
-        for(i = 0;i<s.size();i++)
+    bool backspaceCompare(string s, string t) { 
+        string r1 = "", r2 = "";
+        for(int i = 0;i<s.size();i++)
         {
-            if(s[i]=='#'){
-                if(x.empty())
-                    continue;
-                x.pop();
-            }else{
-                x.push(s[i]);
+            if(s[i] >= 'a' and s[i]<='z')
+            {
+                r1+=s[i];
             }
+            else if(!r1.empty())
+                r1.pop_back();
         }
-        for(j = 0;j<t.size();j++)
+        for(int i = 0;i<t.size();i++)
         {
-            if(s[i]=='#'){
-                if(y.empty())
-                    continue;
-                y.pop();
-            }else{
-                y.push(t[i]);
+            if(t[i] >= 'a' and t[i]<='z')
+            {
+                r2+=t[i];
             }
+            else if(!r2.empty())
+                r2.pop_back();
         }
-
-        return x==y;
+        
+        return r1 == r2;
     }
 };

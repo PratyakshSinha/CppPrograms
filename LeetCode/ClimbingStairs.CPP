@@ -22,7 +22,7 @@ public:
 
         //Dynamic Programming approach
         vector<int> FibonacciArray;
-        FibonacciArray.reserve(n);
+        FibonacciArray.reserve(n+1);
         int i;
 
         FibonacciArray[0] = 0;
