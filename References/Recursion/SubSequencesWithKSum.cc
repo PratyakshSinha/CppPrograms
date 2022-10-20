@@ -50,14 +50,33 @@ bool OneSubSequenceWithSumK(int i, vector<int>& ds, int arr[], int s, int Sum, i
     return false;
 }
 
+int CountSubSequencesWithSumK(int i, vector<int>& ds, int arr[], int s, int Sum, int n)
+{
+    if(i == n)
+    {
+        if(s == Sum)
+        {
+            return 1;
+        }
+        return 0;
+    }
+    ds.push_back(arr[i]);
+    int l = CountSubSequencesWithSumK(i+1, ds, arr, s+arr[i], Sum, n);
+    ds.pop_back();
+    int r = CountSubSequencesWithSumK(i+1, ds, arr, s, Sum, n);
+     
+    return l+r;
+}
+
 int main()
 {
-    int arr[] = {1,2,1};
+    int arr[] = {1,2,1,1};
     vector<int> ds;
-    int Sum = 2;
+    int Sum = 3;
     cout<<"All Sub Sequences:\n";
-    SubSequencesWithSumK(0, ds, arr, 0, Sum, 3);
+    SubSequencesWithSumK(0, ds, arr, 0, Sum, 4);
     cout<<"One Sub Sequence: ";
-    OneSubSequenceWithSumK(0, ds, arr, 0, Sum, 3);
+    OneSubSequenceWithSumK(0, ds, arr, 0, Sum, 4);
+    cout<<"Number of Sub Sequences with sum = "<<Sum<<": "<<CountSubSequencesWithSumK(0, ds, arr, 0, Sum, 4);
     return 0;
 }
