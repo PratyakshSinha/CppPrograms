@@ -7,7 +7,7 @@ int main()
 {
     fstream myFile;
     myFile.open("Sample.txt", ios::out);//write
-    if(myFile.is_open())
+    if(myFile.is_open())    
     {
         myFile<<"Hello\n";
         myFile<<"This is 2nd line\n";
