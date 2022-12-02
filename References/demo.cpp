@@ -1,41 +1,41 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
+
 using namespace std;
 
+bool subsetSumUtil(int ind, int target, int count, vector<int>& arr){
+    if(count>4)
+        return false;
+    if(target==0)
+        return true;
+    
+    if(ind == 0)
+        return arr[0] == target;
+
+    bool notTaken = subsetSumUtil(ind-1,target,count,arr);
+    
+    bool taken = false;
+    if(arr[ind]<=target)
+        taken = subsetSumUtil(ind-1,target-arr[ind],count+1,arr);
+        
+    return notTaken||taken;
+}
+
+bool subsetSumToK(int n, int k, vector<int> &arr){
+    //vector<vector<int>> dp(n,vector<int>(k+1,-1));
+    
+    return subsetSumUtil(n-1,k,1,arr);
+}
 
 int main() {
-    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
-    int Q;
-    cin>>Q;
-    map<string, int> mp;
-    string temp;
-    int marks;
-    int cas;
-    while(Q--)
-    {
-        cin>>cas;
-        switch(cas)  
-        {
-            case 1:
-                cin>>temp;
-                cin>>marks;
-                if(mp.find(temp)!=mp.end())
-                {
-                    mp[temp]+=marks;
-                }
-                else
-                {
-                    mp[temp] = marks;
-                }
-                break;
-            case 2:
-                cin>>temp;
-                mp[temp] = 0;
-                break;
-            case 3:
-                cin>>temp;
-                cout<<mp[temp];
-                break;
-        }       
-    }
-    return 0;
+
+  int n;
+  int x;
+  vector<int> arr(n);
+  cin>>n>>x;
+  for(int i = 0;i<n;i++)
+    cin>>arr[i];
+  if(subsetSumToK(n,x,arr))
+    cout<<"1";
+  else 
+    cout<<"0";
 }
