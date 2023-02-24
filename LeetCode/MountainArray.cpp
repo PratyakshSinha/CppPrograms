@@ -8,7 +8,7 @@ public:
         if(arr.size()<3)
             return false;
 
-        int pos = std::distance(arr.begin(), max_element(arr.begin(), arr.end()));
+        int pos =  max_element(arr.begin(), arr.end()) - arr.begin();
 
         if(pos==arr.size()-1|| pos==0)
         {
