@@ -53,8 +53,8 @@ public:
 	int countTriplet(int arr[], int n)
 	{
 	    int answer = 0;
-        quickSort(arr, 0, n);
-        for (int i = n-1; i >= 0; i++)
+        sort(arr, arr+n);
+        for (int i = n-1; i >= 0; i--)
         {
             int sp = 0, ep = i-1;
             while(sp<ep)
