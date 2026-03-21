@@ -18,4 +18,17 @@ public:
         
         return -1;
     }
+
+    int firstUniqChar(string s) {
+        unordered_map<char, int> mp;
+        for(int it = 0; it<s.size(); it++) {
+            mp[it]++;
+        }
+
+        for(auto it : mp) {
+            
+        }
+
+    }
+
 };

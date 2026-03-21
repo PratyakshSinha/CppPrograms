@@ -4,7 +4,7 @@ using namespace std;
 class Solution
 {
 public:
-    vector<int> twoSum(vector<int> &nums, int target)
+    vector<int> twoSum1(vector<int> &nums, int target)
     {
         vector<int> answer;
         answer.reserve(2);
@@ -22,7 +22,7 @@ public:
         }
     }
 
-    vector<int> twoSum(vector<int>& nums, int target) {
+    vector<int> twoSum2(vector<int>& nums, int target) {
         map<int,int> mp;
         for(int i = 0;i<nums.size();i++)
         {
@@ -42,5 +42,16 @@ public:
         return res;
     }
 
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int, int> mp;
+        for(int i = 0; i < nums.size(); i++){
+            int complement = target - nums[i];
+            if(mp.count(complement)) {
+                return {mp[complement], i};
+            }
+            mp.insert({nums[i], i});
+        }
+        return {0,0};
+    }
     
 };
